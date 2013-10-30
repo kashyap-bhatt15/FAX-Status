@@ -19,7 +19,7 @@
     mysql_real_escape_string($_POST["Body"]),
     mysql_real_escape_string($_POST["From"]),
     mysql_real_escape_string($_POST["SmsSid"]),
-    mysql_real_escape_string(date(DATE_RFC2822);));
+    mysql_real_escape_string(date(DATE_RFC2822)));
 
     $result = mysql_query($query);
 
@@ -34,9 +34,13 @@
     //echo 'Hello ' . htmlspecialchars($_POST["Body"]) . '!';
 
     // now reply the sender
+    /*
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
     <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was <?php echo $_POST["Body"] ?></Message>
 </Response>
+*/
+    echo "end";
+?>
