@@ -21,14 +21,27 @@ Before php tag
 	echo 'Connected successfully';
     mysql_select_db($db);
 
+    $query = sprintf("SELECT firstname, lastname, address, age FROM friends 
+    WHERE firstname='%s' AND lastname='%s'",
+    mysql_real_escape_string($firstname),
+    mysql_real_escape_string($lastname));
 
-	//$result = mysqli_query($con,"SELECT * FROM users");
+    $result = mysql_query($query);
 
-	/*while($row = mysqli_fetch_array($result))
-	{
-		echo $row['id'] . " " . $row['username'];
-		echo "<br>";
-	}*/
+
+	if (!$result) {
+	    $message  = 'Invalid query: ' . mysql_error() . "\n";
+	    $message .= 'Whole query: ' . $query;
+	    die($message);
+	}
+
+	while ($row = mysql_fetch_assoc($result)) {
+	    echo $row['firstname'];
+	    echo $row['lastname'];
+	    echo $row['address'];
+	    echo $row['age'];
+	}
+
 
 	mysql_close($con);
 
