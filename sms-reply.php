@@ -10,12 +10,12 @@
         $name = "";
     }
  
-    echo 'Hello ' . htmlspecialchars($_POST["Body"]) . '!';
+    //echo 'Hello ' . htmlspecialchars($_POST["Body"]) . '!';
 
     // now greet the sender
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was <?php $_POST["Body"] ?></Message>
+    <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was <?php echo $_POST["Body"] ?></Message>
 </Response>
