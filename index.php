@@ -14,17 +14,14 @@ Before php tag
 <?php
     include "configure.php";
 
-    $con = mysqli_connect($server, $username, $password, $db);
-            
-    echo $db;
-    // mysql_select_db($db);
-    if (mysqli_connect_errno($con)) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    $con = mysql_connect($server, $username, $password);
+    if (!$con) {
+    	die('Could not connect: ' . mysql_error());
 	}
-	else {
-		echo "Connected";
-	}
-	echo "<hr>";
+	echo 'Connected successfully';
+    mysql_select_db($db);
+
+
 	//$result = mysqli_query($con,"SELECT * FROM users");
 
 	/*while($row = mysqli_fetch_array($result))
@@ -33,7 +30,7 @@ Before php tag
 		echo "<br>";
 	}*/
 
-	mysqli_close($con);
+	mysql_close($con);
 
 ?>
 After php tag
