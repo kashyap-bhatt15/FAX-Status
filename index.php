@@ -20,7 +20,7 @@
 
     $con = mysqli_connect($server, $username, $password, $db);
             
-    
+    echo $db;
     // mysql_select_db($db);
     if (mysqli_connect_errno($con)) {
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
