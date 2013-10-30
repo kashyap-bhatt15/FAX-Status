@@ -12,14 +12,7 @@
 Before php tag
 <?php echo "Before inside php tag";?>
 <?php
-	
-	$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
-	print_r $url;
-
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"],1);
+    include "configure.php";
 
     $con = mysqli_connect($server, $username, $password, $db);
             
