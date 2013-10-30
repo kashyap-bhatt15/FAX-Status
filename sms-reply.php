@@ -8,7 +8,7 @@
     }
     mysql_select_db($db);
 
-    $query = sprintf("INSERT INTO incoming (message, from_number, message_sid) VALUES ('%s','%s','%s')",
+    $query = sprintf("INSERT INTO incoming (message, from_number, message_sid, type) VALUES ('%s','%s','%s', 'text')",
     mysql_real_escape_string($_POST["Body"]),
     mysql_real_escape_string($_POST["From"]),
     mysql_real_escape_string($_POST["SmsSid"]));

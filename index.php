@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-	FAX Status - SMS based application for Fresno area public transport
+	FAX Status - SMS and Voice based application for Fresno area public transport
 </title>
 </head>
 
@@ -9,8 +9,7 @@
 <h1>
 	FAX Status 
 </h1>
-Before php tag
-<?php echo "Before inside php tag";?>
+<b><u> List of SMS received</b></u>
 <?php
     include "configure.php";
 
@@ -18,14 +17,14 @@ Before php tag
     if (!$con) {
     	die('Could not connect: ' . mysql_error());
 	}
-	echo 'Connected successfully';
     mysql_select_db($db);
 
-    $query = sprintf("SELECT firstname, lastname, address, age FROM friends 
+    $query = sprintf("SELECT message, from_number FROM incoming ");
+    /*
     WHERE firstname='%s' AND lastname='%s'",
     mysql_real_escape_string($firstname),
     mysql_real_escape_string($lastname));
-
+	*/
     $result = mysql_query($query);
 
 
@@ -34,19 +33,22 @@ Before php tag
 	    $message .= 'Whole query: ' . $query;
 	    die($message);
 	}
+	?>
+	<table>
+	<tr><th>Message Content</th><th>From Number</th></tr>
+	<?php
 
 	while ($row = mysql_fetch_assoc($result)) {
-	    echo $row['firstname'];
-	    echo $row['lastname'];
-	    echo $row['address'];
-	    echo $row['age'];
+		echo "<tr>";
+	    echo "<td>" . $row['message'] . "</td>";
+	    echo "<td>" . $row['from_number'] . "</td>";
+	    echo "</tr>";
 	}
 
 
 	mysql_close($con);
-
-?>
-After php tag
+	?>
+	</table>
 </body>
 </html>
 <?php
