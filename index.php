@@ -9,7 +9,7 @@
 <h1>
 	FAX Status 
 </h1>
-<b><u> List of SMS received</b></u>
+<b><u>Received text/call</b></u>
 <?php
     include "configure.php";
 
@@ -19,7 +19,7 @@
 	}
     mysql_select_db($db);
 
-    $query = sprintf("SELECT message, from_number FROM incoming ");
+    $query = sprintf("SELECT message, from_number, type FROM incoming ");
     /*
     WHERE firstname='%s' AND lastname='%s'",
     mysql_real_escape_string($firstname),
@@ -35,13 +35,14 @@
 	}
 	?>
 	<table>
-	<tr><th>Message Content</th><th>From Number</th></tr>
+	<tr><th>Message Content</th><th>From Number</th><th>Type</th></tr>
 	<?php
 
 	while ($row = mysql_fetch_assoc($result)) {
 		echo "<tr>";
 	    echo "<td>" . $row['message'] . "</td>";
 	    echo "<td>" . $row['from_number'] . "</td>";
+	    echo "<td>" . $row['type'] . "</td>";
 	    echo "</tr>";
 	}
 
