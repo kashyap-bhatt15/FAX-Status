@@ -9,9 +9,9 @@
     echo 'Connected successfully';
     mysql_select_db($db);
 
-    $_POST["Body"] = "message body";
+    /*$_POST["Body"] = "message body";
     $_POST["From"] = "1212123434";
-    $_POST["SmsSid"] = "231212121344355654654654";
+    $_POST["SmsSid"] = "231212121344355654654654";*/
     $query = sprintf("INSERT INTO incoming (message, from_number, message_sid) VALUES ('%s','%s','%s')",
     mysql_real_escape_string($_POST["Body"]),
     mysql_real_escape_string($_POST["From"]),
