@@ -10,7 +10,7 @@
         $name = "";
     }
  
-    //echo 'Hello ' . htmlspecialchars($_POST["Body"]) . '!';
+    echo 'Hello ' . htmlspecialchars($_POST["Body"]) . '!';
 
     // now greet the sender
     header("content-type: text/xml");
