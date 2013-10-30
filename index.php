@@ -9,6 +9,8 @@
 <h1>
 	FAX Status 
 </h1>
+Before php tag
+<?php echo "Before inside php tag";?>
 <?php
 	
 	$url=parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -40,6 +42,7 @@
 	mysqli_close($con);
 
 ?>
+After php tag
 </body>
 </html>
 <?php
