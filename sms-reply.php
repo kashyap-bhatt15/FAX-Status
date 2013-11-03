@@ -33,7 +33,7 @@
         if ($stop_id == -1) {
             $message = "System is not working because of technical reasons. Please check back later.";
         }
-        elseif($stop_id = 0) {
+        elseif($stop_id == 0) {
             $message = "Please enter correct bus stop to get information. Check your bus stop where you at.";
         }
         else {
