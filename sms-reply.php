@@ -22,8 +22,8 @@
         $message .= 'Whole query: ' . $query;
     }
 
-    /* Code  for removing spaces and getting Stop code */
-    //$stop_id = get_stop_id_from_stop_code($_POST["Body"]);
+
+    $stop_id = get_stop_id_from_stop_code($_POST["Body"]);
 
 
 
