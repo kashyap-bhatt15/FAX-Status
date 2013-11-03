@@ -1,7 +1,6 @@
 <?php
     
     include "configure.php";
-    include "functions.php"
 
     $con = mysql_connect($server, $username, $password);
     if (!$con) {
@@ -23,17 +22,7 @@
     }
 
     /* Code  for removing spaces and getting Stop code */
-    $stop_code = preg_replace('/\s+/', '', $_POST["Body"]);
-    $stop_id = get_stop_id_from_stop_code($stop_code);
-    if ($stop_id == -1) {
-        $message = "System is not working because of technical reasons. Please check back later.";
-    }
-    elseif($stop_id = 0) {
-        $message = "Please enter correct bus stop to get information. Check your bus stop where you at.";
-    }
-    else {
-        $message = "You are at " . $stop_id . ". Next " . "bus (bus number)" . "will arrive shortly";
-    }
+    
 
     mysql_close($con);
  
@@ -43,5 +32,5 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message>, thanks for the message.</Message>
+    <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was received and recorded. Contact 484-632-5324 for more information</Message>
 </Response>
