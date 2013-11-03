@@ -1,6 +1,7 @@
 <?php
     
     include "configure.php";
+    include "functions.php"
 
     $con = mysql_connect($server, $username, $password);
     if (!$con) {
