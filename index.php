@@ -19,7 +19,7 @@
 	}
     mysql_select_db($db);
 
-    $query = sprintf("SELECT message, from_number, type FROM incoming ");
+    $query = sprintf("SELECT message, from_number, type FROM incomings ");
     /*
     WHERE firstname='%s' AND lastname='%s'",
     mysql_real_escape_string($firstname),

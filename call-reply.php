@@ -21,11 +21,6 @@
         $message .= 'Whole query: ' . $query;
     }
 
-    /* Code  for removing spaces and getting Stop code */
-    $stop_code = preg_replace('/\s+/', '', $message);
-    $stop_id = get_stop_id_from_stop_code($stop_code);
-
-
     mysql_close($con);
  
 
