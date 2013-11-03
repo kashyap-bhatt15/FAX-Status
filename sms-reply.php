@@ -23,7 +23,7 @@
     }
 
     /* Code  for removing spaces and getting Stop code */
-    $stop_id = get_stop_id_from_stop_code($_POST["Body"]);
+    // $stop_id = get_stop_id_from_stop_code($_POST["Body"]);
 
 
 
@@ -35,7 +35,7 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was received and recorded. Contact 484-632-5324 for more information</Message>
+    <Message><?php eecho $_POST['Body']?> Hi,thanks for the message! FAX Status will be up soon. Your message was received and recorded. Contact 484-632-5324 for more information</Message>
 </Response>
 
 <!--
