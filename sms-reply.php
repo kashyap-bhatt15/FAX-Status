@@ -32,7 +32,7 @@
         $message = "Please enter correct bus stop to get information. Check your bus stop where you at.";
     }
     else {
-        $message = "You are at " . $stop_code . ". Next " . "bus (bus number)" . "will arrive shortly";
+        $message = "You are at " . $stop_id . ". Next " . "bus (bus number)" . "will arrive shortly";
     }
 
     mysql_close($con);
@@ -43,5 +43,5 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message><?php echo $message; ?>, thanks for the message.</Message>
+    <Message><?php // echo $message; ?>, thanks for the message.</Message>
 </Response>
