@@ -23,7 +23,7 @@
     }
 
     /* Code  for removing spaces and getting Stop code */
-    $stop_code = preg_replace('/\s+/', '', $$_POST["Body"]);
+    $stop_code = preg_replace('/\s+/', '', $_POST["Body"]);
     $stop_id = get_stop_id_from_stop_code($stop_code);
     if ($stop_id == -1) {
         $message = "System is not working because of technical reasons. Please check back later.";
@@ -43,5 +43,5 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message><?php // echo $message; ?>, thanks for the message.</Message>
+    <Message>, thanks for the message.</Message>
 </Response>
