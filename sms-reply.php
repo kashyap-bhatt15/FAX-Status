@@ -8,11 +8,13 @@
         die('Could not connect: ' . mysql_error());
     }
     mysql_select_db($db);
+    $type = "text";
 
-    $query = sprintf("INSERT INTO incomings (message, from_number, message_sid, type) VALUES ('%s','%s','%s', 'text')",
+    $query = sprintf("INSERT INTO incomings (message, from_number, message_sid, type) VALUES ('%s','%s','%s', '%s')",
     mysql_real_escape_string($_POST["Body"]),
     mysql_real_escape_string($_POST["From"]),
-    mysql_real_escape_string($_POST["SmsSid"]));
+    mysql_real_escape_string($_POST["SmsSid"]),
+    mysql_real_escape_string($type));
 
     $result = mysql_query($query);
 
