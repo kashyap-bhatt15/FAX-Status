@@ -1,8 +1,8 @@
-<!--
-	All the functions used through out the project lies here.
--->
-
 <?php
+
+/*
+	All the functions used through out the project lies here.
+*/
 
 /* Find bus stop details from stop code and return return stop id */
 function get_stop_id_from_stop_code($stop_code) {
