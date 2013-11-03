@@ -43,5 +43,5 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message><?= $message ?></Message>
+    <Message><?php echo $message; ?>, thanks for the message.</Message>
 </Response>
