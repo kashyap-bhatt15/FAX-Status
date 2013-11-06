@@ -1,5 +1,14 @@
 <?php
-    
+    header("content-type: text/xml");
+    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+?>
+<Response>
+    <Say>Hello thank you for calling FAX Status system. FAX Status will be up soon</Say>
+</Response>
+
+
+<?php
+/*    
     include "configure.php";
 
     $con = mysql_connect($server, $username, $password);
@@ -27,7 +36,5 @@
     // now reply the sender   
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+    */
 ?>
-<Response>
-    <Message>Hi,thanks for the message! FAX Status will be up soon. Your message was received and recorded. Contact 484-632-5324 for more information</Message>
-</Response>

@@ -60,6 +60,7 @@
         }
     }
     else {
+        /* Code required only to test functionality in GET
         $route_details = get_route_details('404649');
     
         if(array_key_exists(0, $route_details) && $route_details[0] == '0') {
@@ -77,7 +78,8 @@
             $bus_direction = $bus_detail['direction'];
             $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " and your schedule information system will be up soon.";
         }
-        $message .= " In order to receive your bus schedule you need to send the bus code.";
+        */
+        $message .= " In order to receive your bus schedule you need to send the bus code via SMS.";
     }
     mysql_close($con);
 
