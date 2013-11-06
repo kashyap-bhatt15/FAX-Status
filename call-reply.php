@@ -1,14 +1,5 @@
 <?php
-    header("content-type: text/xml");
-    echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-?>
-<Response>
-    <Say>Hello thank you for calling FAX Status system. FAX Status will be up soon. FAX status is developed by Kashyap Bhatt</Say>
-</Response>
-
-
-<?php
-/*    
+ 
     include "configure.php";
 
     $con = mysql_connect($server, $username, $password);
@@ -17,10 +8,10 @@
     }
     mysql_select_db($db);
 
-    $query = sprintf("INSERT INTO incomings (message, from_number, message_sid, type) VALUES ('%s','%s','%s', 'text')",
-    mysql_real_escape_string($_POST["Body"]),
-    mysql_real_escape_string($_POST["From"]),
-    mysql_real_escape_string($_POST["SmsSid"]));
+    $query = sprintf("INSERT INTO incomings (message, from_number, message_sid, type) VALUES ('%s','%s','%s', 'voice')",
+    mysql_real_escape_string($_REQUEST["Body"]),
+    mysql_real_escape_string($_REQUEST["From"]),
+    mysql_real_escape_string($_REQUEST["CallSid"]));
 
     $result = mysql_query($query);
 
@@ -33,8 +24,9 @@
     mysql_close($con);
  
 
-    // now reply the sender   
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-    */
 ?>
+<Response>
+    <Say>Hello thank you for calling Fresno Transport Status system. FAX Status will be up soon. FAX status is developed by Kashyap Bhatt</Say>
+</Response>
