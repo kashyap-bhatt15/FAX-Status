@@ -50,7 +50,8 @@
             $message = "System is not working because of technical reasons. Please check back later.";
         }
         else {
-            $stop_name = get_bus_stop_details($route_details['bus_stop_id'])['name'];
+            $stop_details = get_bus_stop_details($route_details['bus_stop_id']);
+            $stop_name = $stop_details['name'];
 
             $bus_detail = get_bus_details($route_details['bus_id']);
             $bus_number =  $bus_detail['number'];
@@ -68,7 +69,8 @@
             $message = "System is not working because of technical reasons. Please check back later.";
         }
         else {
-            $stop_name = get_bus_stop_details($route_details['bus_stop_id'])['name'];
+            $stop_details = get_bus_stop_details($route_details['bus_stop_id']);
+            $stop_name = $stop_details['name'];
 
             $bus_detail = get_bus_details($route_details['bus_id']);
             $bus_number =  $bus_detail['number'];
