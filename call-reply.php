@@ -28,7 +28,7 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Say>Hello thank you for calling Fresno Transport Status system. FAX Status will be up soon.</Say>
+    <Say>Hello thank you for calling Fresno Transport Status system.</Say>
     <Gather numDigits="6" action="bus-code-handle.php" method="POST">
         <Say>Please enter the 6 digit bus stop to get next scheduled bus information.</Say>
     </Gather>

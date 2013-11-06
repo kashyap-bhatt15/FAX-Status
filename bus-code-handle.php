@@ -11,5 +11,5 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Say>Schedule information system is not up yet. Please check back later. FAX status is developed by Kashyap.</Say>
+    <Say>Schedule information system is not up yet. Please check back later. Thank you for calling. FAX status is developed by Kashyap.</Say>
 </Response>
