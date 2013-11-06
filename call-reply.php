@@ -3,7 +3,7 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Say>Hello thank you for calling FAX Status system. FAX Status will be up soon</Say>
+    <Say>Hello thank you for calling FAX Status system. FAX Status will be up soon. FAX status is developed by Kashyap Bhatt</Say>
 </Response>
 
 
