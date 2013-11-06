@@ -57,9 +57,11 @@ function get_route_id_from_stop_code($stop_code) {
 function get_route_details($stop_code) {
     $query = sprintf("SELECT id, bus_stop_id, bus_id FROM routes WHERE bus_stop_code = '%s'",
         mysql_real_escape_string($stop_code));
-    // echo $query;
+
+    // echo "<queryPrint>" . $query . "</queryPrint>";
 
     $result = mysql_query($query);
+    // echo $result;
 
     if (!$result) {
         $message  = 'Invalid query: ' . mysql_error() . "\n";
@@ -114,7 +116,7 @@ function get_bus_details($id) {
         $row = mysql_fetch_assoc($result);
         return $row;
     }
-    
+
 }
 
 ?>
