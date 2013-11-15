@@ -63,13 +63,22 @@
     echo "<hr>";
     echo $next_bus_times;
 
-    /*
-	  SQL Queries:
-	    SELECT MAKETIME(12,15);
-			SELECT gupnp_context_get_subscription_timeout(context)E('12:04:20','12:03:20');
-			SELECT TIMEDIFF('00:00:00','04:01:20');
-			SELECT event_id FROM Table ORDER BY ABS( DATEDIFF( EVENT_START_DATE, NOW() ) ) LIMIT 3;
-    */
+    echo "<hr>";
+    echo strtotime("now"), "\n";
+    print_r(gettimeofday());
+    echo "<hr>";
+    if (($timestamp = strtotime("now")) === false) {
+    	echo "The string is bogus";
+		} else {
+    	echo "now() == " . date('l dS \o\f F Y h:i:s A', $timestamp);
+		}
+    echo "<hr>";
+    date_default_timezone_set('America/Los_Angeles');
+		$format = '%d-%m-%Y %H:%M:%S';
+		$strf = strftime($format, strtotime("now"));
+		echo $strf;
+
+
 ?>
 
 <?php

@@ -59,7 +59,11 @@
             $bus_direction = $bus_detail['direction'];
 
             
-            $incoming_time = '2013-11-15 18:20:46';
+            // $incoming_time = '2013-11-15 18:20:46';
+            date_default_timezone_set('America/Los_Angeles');
+            $format = '%d-%m-%Y %H:%M:%S';
+            $incoming_time = strftime($format, strtotime("now"));
+
             $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
 
             if($next_bus_times == -1) {
@@ -95,7 +99,11 @@
             $bus_direction = $bus_detail['direction'];
 
             
-            $incoming_time = '2013-11-15 18:20:46';
+            // $incoming_time = '2013-11-15 18:20:46';
+            date_default_timezone_set('America/Los_Angeles');
+            $format = '%d-%m-%Y %H:%M:%S';
+            $incoming_time = strftime($format, strtotime("now"));
+
             $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
             
             if($next_bus_times == -1) {
