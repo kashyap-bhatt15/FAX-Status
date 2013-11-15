@@ -1,5 +1,14 @@
+<h2>To Do Things: </h2>
+<ol>
+	<li>Create a Report and submit for progress so far.</li>
+	<li>Do it for 38 North and Route 9 Both Directions</li>
+	<li>Differentiate between Weekday and Weekend Schedules.</li>
+	<li>If there is no bus left for the day then return them with First 3 bus times of next day.</li>
+	<li>Find other scenarios/errors in add it to this list.</li>
+</ol>
+<hr>
 <?php
-    include "configure.php";
+  include "configure.php";
 
 	$con = mysql_connect($server, $username, $password);
     if (!$con) {
