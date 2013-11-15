@@ -70,7 +70,7 @@
                 $message = "System is not working because of technical reasons. Please check back later. - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
             elseif($next_bus_times == 0) {
-                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " TOMORROW. Last Bus has left." . " "." - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
+                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " TOMORROW. Last Bus of the day has left." . " "." - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
             else {
                 
@@ -103,6 +103,7 @@
             date_default_timezone_set('America/Los_Angeles');
             $format = '%d-%m-%Y %H:%M:%S';
             $incoming_time = strftime($format, strtotime("now"));
+            $incoming_time = '2013-11-15 21:20:46';
 
             $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
             
@@ -110,7 +111,7 @@
                 $message = "System is not working because of technical reasons. Please check back later. - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
             elseif($next_bus_times == 0) {
-                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " TOMORROW. Last Bus has left." . " "." - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
+                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " TOMORROW. Last Bus of the day has left." . " "." - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
             else {
                 
