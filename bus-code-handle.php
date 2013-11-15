@@ -30,6 +30,7 @@
             $message = "System is not working because of technical reasons. Please check back later. - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
         }
         else {
+            
             $stop_details = get_bus_stop_details($route_details['bus_stop_id']);
             $stop_name = $stop_details['name'];
 

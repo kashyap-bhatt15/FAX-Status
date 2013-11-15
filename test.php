@@ -12,6 +12,7 @@
 	include "configure.php";
 	include "functions.php";
 
+	$stop_code = '404649';
 	echo get_stop_id_from_stop_code("404649");
 	echo "<hr>";
 	echo "start<br>";
@@ -51,6 +52,24 @@
     echo $message;
     echo "<hr>";
     var_dump($route_details);
+    echo "<hr>";
+    $incoming_time = '2013-11-15 18:20:46';
+    echo $time = date("H:i",strtotime($incoming_time));
+    echo "<hr>";
+    echo $day = date("l",strtotime($incoming_time));
+    $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
+    
+
+    echo "<hr>";
+    echo $next_bus_times;
+
+    /*
+	  SQL Queries:
+	    SELECT MAKETIME(12,15);
+			SELECT gupnp_context_get_subscription_timeout(context)E('12:04:20','12:03:20');
+			SELECT TIMEDIFF('00:00:00','04:01:20');
+			SELECT event_id FROM Table ORDER BY ABS( DATEDIFF( EVENT_START_DATE, NOW() ) ) LIMIT 3;
+    */
 ?>
 
 <?php

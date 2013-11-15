@@ -18,13 +18,9 @@
     	die('Could not connect: ' . mysql_error());
 	}
     mysql_select_db($db);
-
-    $query = sprintf("SELECT message, from_number, type FROM incomings ");
-    /*
-    WHERE firstname='%s' AND lastname='%s'",
-    mysql_real_escape_string($firstname),
-    mysql_real_escape_string($lastname));
-	*/
+		//SELECT CONVERT_TZ('2013-11-13 21:42:53','-00:00','-08:00')
+    $query = sprintf("SELECT message, from_number, type, created_at, CONVERT_TZ(created_at,'-00:00','-08:00') as incoming_time FROM incomings ");
+		// echo $query;
     $result = mysql_query($query);
 
 
@@ -35,7 +31,7 @@
 	}
 	?>
 	<table>
-	<tr><th>Message Content</th><th>From Number</th><th>Type</th></tr>
+	<tr><th>Message Content</th><th>From Number</th><th>Type</th><th>Time in Server Zone</th><th>Time in PST</th></tr>
 	<?php
 
 	while ($row = mysql_fetch_assoc($result)) {
@@ -43,6 +39,8 @@
 	    echo "<td>" . $row['message'] . "</td>";
 	    echo "<td>" . $row['from_number'] . "</td>";
 	    echo "<td>" . $row['type'] . "</td>";
+	    echo "<td>" . $row['created_at'] . "</td>";
+	    echo "<td>" . $row['incoming_time'] . "</td>";
 	    echo "</tr>";
 	}
 
