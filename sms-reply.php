@@ -61,7 +61,6 @@
             
             $incoming_time = '2013-11-15 18:20:46';
             $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
-            
 
             if($next_bus_times == -1) {
                 $message = "System is not working because of technical reasons. Please check back later. - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
@@ -70,9 +69,8 @@
                 $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " TOMORROW. Last Bus has left." . " "." - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
             else {
-                $times = explode(" ", $next_bus_times);
-                $bus_times = implode(",", $times);
-                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . ". at " . $bus_times . ". - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
+                
+                $message = "You are at " . $stop_name . " and your next bus will be " . $bus_number . " " . $bus_direction . " at " . $next_bus_times . ". - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
 
         }
@@ -100,7 +98,6 @@
             $incoming_time = '2013-11-15 18:20:46';
             $next_bus_times = get_next_buses($incoming_time,$stop_code, $route_details['id']);
             
-
             if($next_bus_times == -1) {
                 $message = "System is not working because of technical reasons. Please check back later. - Developed by Fresno State Industrial Tech Graduate Student Kashyap.";
             }
