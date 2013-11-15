@@ -121,12 +121,10 @@ function get_bus_details($id) {
 
 /* This function will return the next buses based on time and stop code. */
 function get_next_buses($incoming_time, $stop_code, $route_id) {
-    // Working Query
     // echo "In get_next_buses Function<hr>";
     $time = date("H:i",strtotime($incoming_time));
     $query_time = "2000-01-01 " . $time . ":00";
     
-    // $query = "SELECT id, time, route_id, TIMEDIFF( time, '2000-01-01 14:20:00' ) FROM schedules_weekday WHERE route_id = 1 AND ( TIMEDIFF( time, '2000-01-01 14:20:00' ) ) > 0 ORDER BY ( TIMEDIFF( time, '2000-01-01 14:20:00' ) ) ASC LIMIT 3";
     $query = sprintf("SELECT time, route_id FROM schedules_weekday WHERE route_id = %s AND (TIMEDIFF (time, '%s' ) ) > 0 ORDER BY (TIMEDIFF (time, '%s') ) ASC LIMIT 3",
         mysql_real_escape_string($route_id),
         mysql_real_escape_string($query_time),
@@ -144,11 +142,9 @@ function get_next_buses($incoming_time, $stop_code, $route_id) {
         return 0;
     }
     else {
-        // $row = mysql_fetch_assoc($result);
         $message_times = array();
         while ($row = mysql_fetch_assoc($result)) {
             array_push($message_times, date("H:i",strtotime($row['time'])));
-            // $message_times .= date("H:i",strtotime($row['time'])) . " ";
         }
         $bus_times = implode(", ", $message_times);
 

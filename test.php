@@ -4,7 +4,8 @@
 	<li>Do it for 38 North and Route 9 Both Directions</li>
 	<li>Differentiate between Weekday and Weekend Schedules.</li>
 	<li>If there is no bus left for the day then return them with First 3 bus times of next day.</li>
-	<li>Find other scenarios/errors in add it to this list.</li>
+	<li>Implement in case more than one bus stops at any bus stop in same directiions.</li>
+	<li>Find other scenarios/errors and add it to this list.</li>
 </ol>
 <hr>
 <?php
@@ -22,22 +23,22 @@
 	include "functions.php";
 
 	$stop_code = '404649';
-	echo get_stop_id_from_stop_code("404649");
+	//echo get_stop_id_from_stop_code("404649");
 	echo "<hr>";
-	echo "start<br>";
-	var_dump(get_route_details("62610"));
-	echo "<hr>";
+	
+	//var_dump(get_route_details("62610"));
+	//echo "<hr>";
 	
 	$route_details = get_route_details("626105");
 	
-	var_dump(get_bus_stop_details($route_details['bus_stop_id']));
-	echo "<hr>";
-	echo (get_bus_stop_details($route_details['bus_stop_id'])['name']);
-	echo "<hr>";
+	//var_dump(get_bus_stop_details($route_details['bus_stop_id']));
+	//echo "<hr>";
+	//echo (get_bus_stop_details($route_details['bus_stop_id'])['name']);
+	//echo "<hr>";
 	$bus_details = get_bus_details($route_details['bus_id']);
-	echo $bus_details['number'];
-	echo $bus_details['direction'];
-	echo "<hr>";
+	//echo $bus_details['number'];
+	//echo $bus_details['direction'];
+	//echo "<hr>";
 
 	// $route_details = get_route_details('404649');
 	$route_details = get_route_details('404649');

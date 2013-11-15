@@ -176,10 +176,73 @@
 
 	}
 
-	$query5 = "INSERT INTO schedules_weekday (route_id, time) VALUES (61, '2000-01-01 ". "20:13:00"."')";
+	$query5 = "INSERT INTO schedules_weekday (route_id, time) VALUES (61, '2000-01-01 ". "20:30:00"."')";
 	mysql_query($query5);
-	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (61, '2000-01-01 ". "21:10:00"."')";
+	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (61, '2000-01-01 ". "21:27:00"."')";
 	mysql_query($query6);
+
+	echo "<hr>";
+
+/*
+ ****************************************************************************************************************************
+*/
+/*
+---------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+/* Each loops represents 1 bus stop on particular route 
+	   In this case 38 North
+	*/
+	/* For Shelter B Route Id: 71 - 38 North */
+  $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "05:45:00"."')";
+  mysql_query($query1);
+	for($j = 6; $j <= 17; $j++) {
+		$query2 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". $j . ":15:00"."')";
+		mysql_query($query2);
+		
+		$query3 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". $j . ":35:0"."')";
+		mysql_query($query3);
+		
+		$query4 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". $j . ":55:00"."')";
+		mysql_query($query4);
+	}
+	$query5 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "18:15:00"."')";
+	mysql_query($query5);
+	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "19:15:00"."')";
+	mysql_query($query6);
+	$query7 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "20:15:00"."')";
+	mysql_query($query7);
+	$query8 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "20:45:00"."')";
+	mysql_query($query8);
+
+	echo "<hr>";
+
+/*
+ ****************************************************************************************************************************
+*/
+
+/* For Hinton Center Route Id: 81 - 38 North */
+  $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". "05:56:00"."')";
+  mysql_query($query1);
+	for($j = 6; $j <= 18; $j++) {
+		if ($j != 6) {
+			$query2 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". $j . ":06:00"."')";
+			mysql_query($query2);
+		}
+		
+		$query3 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". $j . ":26:0"."')";
+		mysql_query($query3);
+		
+		if($j != 18) {
+			$query4 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". $j . ":46:00"."')";
+			mysql_query($query4);
+		}
+	}
+	$query5 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". "19:26:00"."')";
+	mysql_query($query5);
+	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". "20:26:00"."')";
+	mysql_query($query6);
+	$query7 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". "20:54:00"."')";
+	mysql_query($query7);
 
 	echo "<hr>";
 
