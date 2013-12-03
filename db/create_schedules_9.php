@@ -9,32 +9,36 @@
 
 
 	/* Each loops represents 1 bus stop on particular route 
-	   In this case 38 South
+	   In this case 9 East
 	*/
-	echo "For Blackstone El Paso Route Id: 1 - 38 South";
-  $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "05:46:00"."')";
+	echo "For Brawley & Shields Route Id: 141 - 9 East";
+  $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "05:40:00"."')";
   mysql_query($query1);
-	for($j = 6; $j <= 18; $j++) {
-		$query2 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". $j . ":06:00"."')";
+
+	$query2 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "06:10:00"."')";
+	mysql_query($query2);
+
+	$query3 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "06:40:00"."')";
+	mysql_query($query3);
+
+	for($j = 7; $j <= 20; $j++) {
+		$query2 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". $j . ":08:00"."')";
 		mysql_query($query2);
-		if($j != 18) {
-			$query3 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". $j . ":26:0"."')";
+		
+		if(($j != 19) || ($j != 20)) {
+			$query3 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". $j . ":38:0"."')";
 			mysql_query($query3);
 		}
-		$query4 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". $j . ":46:00"."')";
-		mysql_query($query4);
 	}
-	$query5 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "19:36:00"."')";
-	mysql_query($query5);
-	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "20:38:00"."')";
+	$query6 = "INSERT INTO schedules_weekday (route_id, time) VALUES (1, '2000-01-01 ". "21:00:00"."')";
 	mysql_query($query6);
 
 	echo "<hr>";
 
-/*
+/*  START HERE Nov 30 EOD.
  ****************************************************************************************************************************
 */
- 	echo "For Herndon Cedar Route Id: 11 - 38 South";
+ 	echo "For Herndon Cedar Route Id: 11 - 9 East";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (11, '2000-01-01 ". "05:57:00"."')";
   mysql_query($query1);
 	for($j = 6; $j <= 18; $j++) {
@@ -58,7 +62,7 @@
  ****************************************************************************************************************************
 */
  	
- 	echo "For Cedar Shaw Route Id: 21 - 38 South";
+ 	echo "For Cedar Shaw Route Id: 21 - 9 East";
 	for($j = 6; $j <= 18; $j++) {
 		$query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (21, '2000-01-01 ". $j . ":06:00"."')";
 		mysql_query($query1);		
@@ -82,7 +86,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Shields Route Id: 31 - 38 South";
+	echo "For Cedar Shields Route Id: 31 - 9 East";
 	for($j = 6; $j <= 18; $j++) {
 		$query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (31, '2000-01-01 ". $j . ":15:00"."')";
 		mysql_query($query1);
@@ -106,7 +110,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Ventura Route Id: 41 - 38 South";
+	echo "For Cedar Ventura Route Id: 41 - 9 East";
 	for($j = 6; $j <= 18; $j++) {
 		if ($j != 6) {
 			$query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (41, '2000-01-01 ". $j . ":10:00"."')";
@@ -133,7 +137,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Jenson Route Id: 51 - 38 South";
+	echo "For Cedar Jenson Route Id: 51 - 9 East";
 	for($j = 6; $j <= 18; $j++) {
 		if ($j != 6) {
 			$query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (51, '2000-01-01 ". $j . ":18:00"."')";
@@ -160,7 +164,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Hinton Center Route Id: 61 - 38 South";
+	echo "For Hinton Center Route Id: 61 - 9 East";
 	$query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (61, '2000-01-01 ". "06:53:00"."')";
 	$result = mysql_query($query1);
 	for($j = 7; $j <= 19; $j++) {	
@@ -190,9 +194,9 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 */
 /* Each loops represents 1 bus stop on particular route 
-	   In this case 38 North
+	   In this case 9 West
 	*/
-	echo "For Shelter B Route Id: 71 - 38 North";
+	echo "For Shelter B Route Id: 71 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (71, '2000-01-01 ". "05:45:00"."')";
   mysql_query($query1);
 	for($j = 6; $j <= 17; $j++) {
@@ -220,7 +224,7 @@
  ****************************************************************************************************************************
 */
 
-  echo "For Hinton Center Route Id: 81 - 38 North";
+  echo "For Hinton Center Route Id: 81 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (81, '2000-01-01 ". "05:56:00"."')";
   mysql_query($query1);
 	for($j = 6; $j <= 18; $j++) {
@@ -249,7 +253,7 @@
 /*
  ****************************************************************************************************************************
 */
-	echo "For Cedar Jenson Route Id: 91 - 38 North";
+	echo "For Cedar Jenson Route Id: 91 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (91, '2000-01-01 ". "06:10:00"."')";
   mysql_query($query1);
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (91, '2000-01-01 ". "06:40:00"."')";
@@ -278,7 +282,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Ventura Route Id: 101 - 38 North";
+	echo "For Cedar Ventura Route Id: 101 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (101, '2000-01-01 ". "06:20:00"."')";
   mysql_query($query1);
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (101, '2000-01-01 ". "06:50:00"."')";
@@ -306,7 +310,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Shields Route Id: 111 - 38 North";
+	echo "For Cedar Shields Route Id: 111 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (111, '2000-01-01 ". "06:35:00"."')";
   mysql_query($query1);
   
@@ -335,7 +339,7 @@
  ****************************************************************************************************************************
 */
 
-	echo "For Cedar Shaw Route Id: 121 - 38 North";
+	echo "For Cedar Shaw Route Id: 121 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (121, '2000-01-01 ". "06:45:00"."')";
   mysql_query($query1);
   
@@ -363,7 +367,7 @@
 /*
  ****************************************************************************************************************************
 */
-	echo "For Herndon Cedar Route Id: 131 - 38 North";
+	echo "For Herndon Cedar Route Id: 131 - 9 West";
   $query1 = "INSERT INTO schedules_weekday (route_id, time) VALUES (121, '2000-01-01 ". "06:55:00"."')";
   mysql_query($query1);
   
